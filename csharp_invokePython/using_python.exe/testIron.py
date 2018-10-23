@@ -5,11 +5,11 @@ from sqlalchemy.orm import sessionmaker
 
 import time
 
-db_engine = None #create_engine("mssql+pymssql://rds:Nuctech_50@rm-uf6e7713601veidmx4o.sqlserver.rds.aliyuncs.com:3433/umdb",deprecate_large_types=True, encoding="utf-8",echo=False)
+db_engine = None #create_engine("mssql+pymssql://rds:Nuctech_50@rm-uf6e7713601veidmx4o.sqlserver.rds.aliyuncs.com:3433",deprecate_large_types=True, encoding="utf-8",echo=False)
 DBSession = None
 Base = declarative_base()
 
-def init_sqlalchemy(dbname="mssql+pymssql://rds:Nuctech_50@rm-uf6e7713601veidmx4o.sqlserver.rds.aliyuncs.com:3433/umdb"):
+def init_sqlalchemy(dbname="mssql+pymssql://rds:Nuctech_50@rm-uf6e7713601veidmx4o.sqlserver.rds.aliyuncs.com:3433"):
     global db_engine
     global DBSession
 
@@ -68,8 +68,8 @@ from odps import ODPS
 from odps.df import DataFrame
 from odps.models import Schema, Column, Partition
 
-odps = ODPS('LTAI43aG1FXDDpM5', 'DH0BDyyAC4ryyWirbUDjoapBfP3xFS',
-            'sk_odps_test06', 'https://service.odps.aliyun.com/api')
+odps = ODPS('', '',
+            '', 'https://service.odps.aliyun.com/api')
 
 def get_odps_results():
     t0 = time.time()
